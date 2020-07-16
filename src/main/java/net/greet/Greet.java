@@ -7,16 +7,16 @@ public class Greet {
 
     public static void main(String[] args) {
         try {
-    //            final String jdbcURL = "jdbc:h2:file:./target/greetings_db";
             Class.forName("org.h2.Driver");
 
-            // connect to the database
-            Connection conn = DriverManager.getConnection("jdbc:h2:tcp://127.0.1.1:9092/~/IdeaProjects/greet-in-java/target/greetings_app_db", "sa", "");
-            PreparedStatement results = conn.prepareStatement("SELECT * FROM USERS WHERE NAME = 'sbu'");
-            ResultSet list = results.executeQuery();
+            Connection conn = DriverManager.getConnection("jdbc:h2:file:./target/greetings_app_db", "sa", "");
+            PreparedStatement results = conn.prepareStatement("SELECT * FROM USERS");
+            ResultSet rs = results.executeQuery();
+            System.out.println("loading data from query =... " + results);
 
-            System.out.println(conn.getMetaData());
-            System.out.println(list.getString(2));
+            while (rs.next()) {
+                System.out.println(rs.getInt(1) + " " + rs.getString(2));
+            }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
