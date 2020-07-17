@@ -12,4 +12,6 @@
 | mvn flyway:migrate |  create db tables | mvn |
 | mvn flyway:info |    shows info db   |   mvn |
 | mvn flyway:clean | drops all db objects |    mvn |
+
+* mvn clean dependency:copy-dependencies package
     
