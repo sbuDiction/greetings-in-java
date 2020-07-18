@@ -17,4 +17,8 @@ public enum Language {
     Language(String phrase) {
         this.phrase = phrase;
     }
+
+    public String getPhrase() {
+        return phrase;
+    }
 }
