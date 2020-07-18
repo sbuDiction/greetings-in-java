@@ -4,6 +4,7 @@ import net.greet.commands.CommandLineInterpreter;
 import net.greet.greetings.Greetings;
 import net.greet.lang.Language;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class GreetingsCommandLine {
@@ -48,7 +49,12 @@ public class GreetingsCommandLine {
         return "Not a valid command";
     };
 
-    public String greeted() {
+    public String greeted() throws SQLException {
+        try {
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return null;
     }
 
@@ -81,13 +87,24 @@ public class GreetingsCommandLine {
         return language;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+//        String str = "Hi.my.name.is.sbu";
+
+//        scanner.useDelimiter(" ");
+//        scanner.findInLine(" ");
+
         Scanner scanner = new Scanner(System.in);
-        GreetingsCommandLine cmd = new GreetingsCommandLine("greeted", "Sbu", "ENGLISH");
+
+//        Scanner input = scanner.useDelimiter(" ");
+        String line = scanner.next();
+
+//        GreetingsCommandLine cmd = new GreetingsCommandLine(input, input, input);
+//        assert name != null;
 
 //        System.out.println(cmd.greet.greet("sbu", Language.ENGLISH));
-        cmd.interpreter.interpreter();
-
+//        cmd.interpreter.interpreter();
+        System.out.println(line);
+        scanner.close();
 
     }
 }
