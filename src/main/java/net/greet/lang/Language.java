@@ -12,7 +12,7 @@ public enum Language {
     CHINESE("Nǐn hǎo");
 
 
-    public final String phrase;
+    private final String phrase;
 
     Language(String phrase) {
         this.phrase = phrase;

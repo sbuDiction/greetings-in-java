@@ -6,5 +6,5 @@ public enum Cmd {
     counter,
     clear,
     exit,
-    help,
-}
+    help;
+    }

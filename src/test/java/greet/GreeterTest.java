@@ -1,6 +1,5 @@
 package greet;
 
-import net.greet.Greet;
 //import org.junit.Test;
 import org.junit.jupiter.api.Test;
 
