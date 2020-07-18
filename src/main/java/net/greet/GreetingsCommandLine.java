@@ -1,5 +1,6 @@
 package net.greet;
 
+import net.greet.commands.CommandLineInterpreter;
 import net.greet.greetings.Greetings;
 import net.greet.lang.Language;
 
@@ -16,7 +17,7 @@ public class GreetingsCommandLine {
         this.language = language;
     }
 
-    public Greetings greetings = (name, language) -> {
+    public Greetings greet = (name, language) -> {
         String username = name.substring(0, 1).toUpperCase() + name.substring(1);
 
         try {
@@ -30,7 +31,40 @@ public class GreetingsCommandLine {
         return Language.JAPANESE.getPhrase() + ", " + username;
     };
 
+    public CommandLineInterpreter interpreter = () -> {
+        if (getUserCommand().equals("greet")) {
+            return this.greet.greet(getUserName(), Language.valueOf(getLanguage()));
+        } else if (getUserCommand().equals("greeted")) {
+            return greeted();
+        } else if (getUserCommand().equals("counter")) {
+            return counter();
+        } else if (getUserCommand().equals("clear")) {
+            return clear();
+        } else if (getUserCommand().equals("exit")) {
+            return exit();
+        } else if (getUserCommand().equals("help")) {
+            return help();
+        }
+        return "Not a valid command";
+    };
+
     public String greeted() {
+        return null;
+    }
+
+    public String counter() {
+        return null;
+    }
+
+    public String clear() {
+        return null;
+    }
+
+    public String exit() {
+        return null;
+    }
+
+    public String help() {
         return null;
     }
 
@@ -49,9 +83,11 @@ public class GreetingsCommandLine {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        GreetingsCommandLine cmd = new GreetingsCommandLine("greet", "Sbu", "ENGLISH");
+        GreetingsCommandLine cmd = new GreetingsCommandLine("greeted", "Sbu", "ENGLISH");
 
-        System.out.println(cmd.greetings.greet("sbu", Language.ENGLISH));
+//        System.out.println(cmd.greet.greet("sbu", Language.ENGLISH));
+        cmd.interpreter.interpreter();
+
 
     }
 }
