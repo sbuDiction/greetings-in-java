@@ -33,18 +33,19 @@ public class GreetingsCommandLine {
     };
 
     public CommandLineInterpreter interpreter = () -> {
-        if (getUserCommand().equals("greet")) {
-            return this.greet.greet(getUserName(), Language.valueOf(getLanguage()));
-        } else if (getUserCommand().equals("greeted")) {
-            return greeted();
-        } else if (getUserCommand().equals("counter")) {
-            return counter();
-        } else if (getUserCommand().equals("clear")) {
-            return clear();
-        } else if (getUserCommand().equals("exit")) {
-            return exit();
-        } else if (getUserCommand().equals("help")) {
-            return help();
+        switch (getUserCommand()) {
+            case "greet":
+                return this.greet.greet(getUserName(), Language.valueOf(getLanguage()));
+            case "greeted":
+                return greeted();
+            case "counter":
+                return counter();
+            case "clear":
+                return clear();
+            case "exit":
+                return exit();
+            case "help":
+                return help();
         }
         return "Not a valid command";
     };
