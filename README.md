@@ -1,4 +1,7 @@
 # Greetings-in-java
+
+[![Build Status](https://travis-ci.com/sbuDiction/greetings-in-java.svg?branch=master)](https://travis-ci.com/sbuDiction/greetings-in-java)
+
 # Terminal commands.
 * for starting the h2 tcp sever
     - java -cp h2*.jar org.h2.tools.Server
