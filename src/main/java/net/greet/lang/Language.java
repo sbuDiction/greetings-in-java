@@ -1,5 +1,7 @@
 package net.greet.lang;
 
+
+
 public enum Language {
     ZULU("Sawubona, "),
     ENGLISH("Hello, "),
@@ -8,7 +10,7 @@ public enum Language {
     FRENCH("Bonjour, "),
     JAPANESE(" Konnichiwa, "),
     SWAHILI("Shikamoo, "),
-    SOTHO("Lumela, "),
+    SOTHO("Dumela, "),
     CHINESE("Nǐn hǎo, ");
 
 

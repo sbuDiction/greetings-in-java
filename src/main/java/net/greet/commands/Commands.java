@@ -6,6 +6,8 @@ public enum Commands {
     exit,
     greet,
     greeted,
-    help
+    help,
+    lang,
+    history
 
 }
