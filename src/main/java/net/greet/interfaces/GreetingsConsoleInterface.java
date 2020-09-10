@@ -6,7 +6,7 @@ public interface GreetingsConsoleInterface {
 
     void greet(String[] inputArray);
 
-    int greeted() throws SQLException;
+    String greeted() throws SQLException;
 
     String greeted(String name) throws SQLException;
 
